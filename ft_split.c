@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/11 19:49:02 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/11 22:16:57 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ char	**ft_split(char const *s, char c)
 	{
 		pos = find_del(s + i, c);
 		p = ft_substr(s, (unsigned int) i, (size_t)pos);
-		//p = ft_substr(s, (unsigned int)i, (size_t)pos -1);
 		ptr[d] = p;
 		free(p);
 		i = pos + 1;
