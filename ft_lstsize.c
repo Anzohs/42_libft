@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 22:51:15 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/11 22:58:57 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:17:42 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-
 	while (lst)
 	{
 		lst = lst->next;
