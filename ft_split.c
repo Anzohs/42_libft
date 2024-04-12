@@ -6,40 +6,39 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 15:43:18 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 17:27:57 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+void	*ft_calloc(size_t count, size_t size);
 
-static int	count_words(unsigned char *s, char c)
+static int	count_words(char *s, char c)
 {
-	char	*p;
-	int		i;
-	int		result;
+	int	i;
+	int	result;
 
 	i = 1;
 	result = 0;
-	p = (char *) s;
-	while (p[i])
+	while (s[i])
 	{
-		if (p[0] != c && i == 1)
+		if (s[0] != c && i == 1)
 			result++;
-		if (p[i - 1] == c && p[i] != c)
+		if (s[i - 1] == c && s[i] != c)
 			result++;
 		i++;
 	}
 	return (result);
 }
 
-static int	find_del(unsigned char *s, char c)
+static int	find_del(char *s, char c)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] == c)
+	if (s[i] == c)
 		i++;
 	while (s[i] && s[i] != c)
 		i++;
@@ -56,26 +55,18 @@ char	**ft_split(char const *s, char c)
 	int		d;
 	char	**ptr;
 
-	words = count_words((unsigned char *)s, c);
-	ptr = (char **) malloc(sizeof(char *) * words + 1);
-	if (!ptr || !s)
+	words = count_words((char *)s, c);
+	ptr = ft_calloc((size_t)count_words((char *)s, c) + 1, sizeof(char *));
+	if (!ptr)
 		return (NULL);
 	i = 0;
 	d = 0;
-	while (words)
+	while (d < words)
 	{
-		pos = find_del((unsigned char *)s + i, c);
+		pos = find_del((char *)s + i, c);
 		ptr[d] = ft_substr(s, (unsigned int) i, (size_t)pos);
-		free(ptr[d]);
 		i += pos + 1;
-		words--;
 		d++;
 	}
-	ptr[d] = NULL;
 	return (ptr);
 }
-
-//"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i'
-
-
-//t
