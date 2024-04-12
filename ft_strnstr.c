@@ -6,23 +6,19 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:16:57 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/11 19:20:26 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 14:17:20 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+static char	*find_c(const char *big, const char *little, size_t len, int j)
 {
 	int	i;
-	int	j;
 	int	k;
 
 	i = 0;
-	j = 0;
 	k = 0;
-	if (!little)
-		return ((char *) big);
 	while (big[i] && i < (int)len)
 	{
 		if (big[i] == little[j])
@@ -41,4 +37,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		i++;
 	}
 	return (NULL);
+}
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	int	i;
+
+	i = 0;
+	if (!little)
+		return ((char *) big);
+	return (find_c(big, little, len, i));
 }
