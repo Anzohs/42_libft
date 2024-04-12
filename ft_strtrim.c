@@ -6,16 +6,11 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:45:17 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/11 18:55:42 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:58:08 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-
-void	*ft_calloc(size_t count, size_t size);
 
 static int	count_letters(const char *s1, const char *s2)
 {
