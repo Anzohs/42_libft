@@ -6,15 +6,15 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 15:16:39 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:23:26 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 
-static int	count_words(char const *s, char c)
+static int	count_words(unsigned char *s, char c)
 {
 	char	*p;
 	int		i;
@@ -34,12 +34,12 @@ static int	count_words(char const *s, char c)
 	return (result);
 }
 
-static int	find_del(const char *s, char c)
+static int	find_del(unsigned char *s, char c)
 {
 	int	i;
 
 	i = 0;
-	if(i == 0 && s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i] && s[i] != c)
 		i++;
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	int		d;
 	char	**ptr;
 
-	words = count_words(s, c);
+	words = count_words((unsigned char *)s, c);
 	ptr = (char **) malloc(sizeof(char *) * words + 1);
 	if (!ptr || !s)
 		return (NULL);
@@ -64,8 +64,9 @@ char	**ft_split(char const *s, char c)
 	d = 0;
 	while (words)
 	{
-		pos = find_del(s + i, c);
+		pos = find_del((unsigned char *)s + i, c);
 		ptr[d] = ft_substr(s, (unsigned int) i, (size_t)pos);
+		free(ptr[d]);
 		i += pos + 1;
 		words--;
 		d++;
@@ -73,15 +74,3 @@ char	**ft_split(char const *s, char c)
 	ptr[d] = NULL;
 	return (ptr);
 }
-/*
-int	main()
-{
-	char	**str = ft_split(" tesing, this fuking shit", ' ');
-	int	i = 0;
-
-	while(str[i])
-		printf("string: %s  \n", str[i++]);
-
-}
-
-*/
