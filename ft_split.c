@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 19:20:51 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 23:18:58 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 
-static int	count_words(char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	i;
 	int	result;
@@ -53,7 +53,9 @@ char	**ft_split(char const *s, char c)
 	int		d;
 	char	**ptr;
 
-	words = count_words((char *)s, c);
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
 	ptr = ft_calloc((size_t)count_words((char *)s, c) + 1, sizeof(char *));
 	if (!ptr)
 		return (NULL);
@@ -65,7 +67,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		pos = find_del((char *)s + i, c);
 		ptr[d] = ft_substr(s, (unsigned int) i, (size_t)pos);
-		i += pos;
+		i += pos + 1;
 		d++;
 	}
 	return (ptr);

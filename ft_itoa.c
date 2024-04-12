@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:19:38 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 21:59:26 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 22:15:11 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	get_len(long n)
 {
-	int len_maloc;
+	int	len_maloc;
+
 	len_maloc = 0;
 	if (n < 0)
 	{
@@ -33,10 +34,10 @@ static int	get_len(long n)
 
 char	*ft_itoa(int n)
 {
+	long	l;
 	char	*itoa;
-	long		l;
-	int			i;
-	
+	int		i;
+
 	l = n;
 	i = get_len(n);
 	itoa = ft_calloc(i, sizeof(char));
@@ -51,7 +52,7 @@ char	*ft_itoa(int n)
 	}
 	while (l > 9)
 	{
-		itoa[--i] = n % 10 + '0';
+		itoa[--i] = l % 10 + '0';
 		l /= 10;
 	}
 	itoa[--i] = l + '0';
