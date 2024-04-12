@@ -6,10 +6,10 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 14:59:20 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:16:39 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len);
@@ -39,6 +39,8 @@ static int	find_del(const char *s, char c)
 	int	i;
 
 	i = 0;
+	if(i == 0 && s[i] == c)
+		i++;
 	while (s[i] && s[i] != c)
 		i++;
 	if (s[i] == c || !s[i])
@@ -71,3 +73,15 @@ char	**ft_split(char const *s, char c)
 	ptr[d] = NULL;
 	return (ptr);
 }
+/*
+int	main()
+{
+	char	**str = ft_split(" tesing, this fuking shit", ' ');
+	int	i = 0;
+
+	while(str[i])
+		printf("string: %s  \n", str[i++]);
+
+}
+
+*/
