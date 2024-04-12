@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 17:27:57 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/12 19:20:51 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ static int	find_del(char *s, char c)
 	int	i;
 
 	i = 0;
-	if (s[i] == c)
-		i++;
 	while (s[i] && s[i] != c)
 		i++;
 	if (s[i] == c || !s[i])
@@ -63,9 +61,11 @@ char	**ft_split(char const *s, char c)
 	d = 0;
 	while (d < words)
 	{
+		while (s[i] == c)
+			i++;
 		pos = find_del((char *)s + i, c);
 		ptr[d] = ft_substr(s, (unsigned int) i, (size_t)pos);
-		i += pos + 1;
+		i += pos;
 		d++;
 	}
 	return (ptr);
