@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:24:43 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 19:21:36 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/14 16:23:13 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int	ft_lstsize(t_list *lst);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 #endif

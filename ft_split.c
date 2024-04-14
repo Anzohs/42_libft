@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 23:18:58 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:48:58 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int	count_words(const char *s, char c)
 
 	i = 1;
 	result = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		if (s[0] != c && i == 1)

@@ -6,7 +6,7 @@
 #    By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 21:33:01 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/12 21:37:03 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/14 16:22:35 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ft_isupper.c ft_striteri.c ft_memchr.c ft_strlcat.c\
 ft_strjoin.c ft_strtrim.c ft_islower.c ft_strmapi.c
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstsize.c
+BONUS			=	ft_lstsize.c ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstadd_back.c
 
 BONUS_OBJ		= $(BONUS:.c=.o)
 
