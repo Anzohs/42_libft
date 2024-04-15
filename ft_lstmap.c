@@ -6,14 +6,35 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 19:24:26 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/14 19:49:19 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:42:11 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+static t_list	lst_new(void *content)
+{
+	t_list	*n_list;
+
+	if (!content)
+		return (NULL);
+	n_list = (t_list *)malloc(sizeof(*n_list));
+	if (!list)
+		return (NULL);
+	n_list->content = content;
+	n_list->next = NULL;
+	return (n_list);	
+}
+
+static void	lstadd_last(t_list **lst, t_list *new)
+{
+	t_list	*new_list;
+
+	new_list = *lst;
+	if (!new_list)
+		return (NULL);
+
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -24,24 +45,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = NULL;
 	if (!new_list)
 	{
-		lst->content = f(lst->content);
-		new_list = ft_lstnew(lst->content);
-		del(lst->content);
+		new_list = ft_lstnew(f(lst->content));
+		if (!new_list->content)
+			del(new_list->content);
 		lst = lst->next;
 	}
 	while (lst)
 	{
 		lst->content = f(lst->content);
 		ft_lstadd_back(&lst, new_list);
-		del(lst->content);
 		lst = lst->next;
 	}
 	return (new_list);
-}
-
-int	main()
-{
-
-
-
 }
