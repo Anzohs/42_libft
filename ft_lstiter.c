@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 18:59:24 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/14 19:04:01 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:53:57 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
-		return;
+		return ;
 	while (lst)
 	{
 		f(lst->content);

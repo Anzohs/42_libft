@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 19:24:26 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/15 19:43:10 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:56:50 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static t_list	*lst_new(void *content)
 		return (NULL);
 	n_list->content = content;
 	n_list->next = NULL;
-	return (n_list);	
+	return (n_list);
 }
 
 static t_list	*ft_lst_last(t_list *lst)
@@ -44,7 +44,6 @@ static void	lstadd_last(t_list **lst, t_list *new)
 		*lst = new;
 	else
 		new_list->next = new;
-
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
