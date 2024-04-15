@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:45:17 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 20:58:08 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:47:02 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	count_letters(const char *s1, const char *s2)
 {
 	char	*ptr;
+
 	char	*p;
 	int		i;
 	int		j;
