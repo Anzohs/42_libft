@@ -6,7 +6,7 @@
 #    By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 21:33:01 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/14 19:48:18 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/15 19:48:06 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,3 +50,4 @@ bonus:			$(OBJS) $(BONUS_OBJS)
 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus
+
