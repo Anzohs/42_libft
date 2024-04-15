@@ -6,7 +6,7 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:25:24 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/11 20:14:19 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:53:19 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	return (i); 
+	return (i);
 }
