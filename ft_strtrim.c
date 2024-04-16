@@ -6,13 +6,13 @@
 /*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:15:35 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/16 15:40:15 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:02:38 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	to_trim(const char *set, char c)
+static int	trim_words(const char *set, char c)
 {
 	int	i;
 
@@ -26,14 +26,14 @@ static int	to_trim(const char *set, char c)
 	return (0);
 }
 
-static char	*new_string(const char *s1, int start, int len)
+static char	*trim_string(const char *s1, int start, int len)
 {
 	char	*str;
 	int		i;
 
 	if (start > len)
 		return (ft_strdup(""));
-	str = ft_calloc(len, sizeof(char *));
+	str = ft_calloc(len + 1, sizeof(char *));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -56,9 +56,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (ft_strdup(s1));
 	i = 0;
 	j = (int) ft_strlen(s1) - 1;
-	while (to_trim(set, s1[i]))
+	while (trim_words(set, s1[i]))
 		i++;
-	while (to_trim(set, s1[j]))
+	while (trim_words(set, s1[j]))
 		j--;
-	return (new_string(s1, i, j - (i - 1)));
+	return (trim_string(s1, i, j - (i - 1)));
 }
