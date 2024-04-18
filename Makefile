@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/11 21:33:01 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/15 19:48:06 by hladeiro         ###   ########.fr        #
+#    Created: 2024/04/18 19:11:05 by hladeiro          #+#    #+#              #
+#    Updated: 2024/04/18 19:24:17 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,11 @@ ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memset.c ft_memcpy.c \
 ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 ft_isupper.c ft_striteri.c ft_memchr.c ft_strlcat.c\
 ft_strjoin.c ft_strtrim.c ft_islower.c ft_strmapi.c
+
 OBJS			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstsize.c ft_lstnew.c ft_lstadd_front.c ft_lstlast.c\
-ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c ft_lstmap.c
+ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c ft_lstmap.c ft_lstclear.c
 
 BONUS_OBJ		= $(BONUS:.c=.o)
 
@@ -34,20 +35,19 @@ CFLAGS			= -Wall -Wextra -Werror
 NAME			= libft.a
 
 all:			$(NAME)
-
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
+bonus:			$(BONUS) $(BONUS_OBJ) 
+				ar rcs $(NAME) $(BONUS_OBJ)
+
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(BONUS_OBJ)
 
-re:				fclean $(NAME)
-
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+re:				fclean 
+				$(NAME) 
 
 .PHONY:			all clean fclean re bonus
-

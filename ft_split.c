@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 19:44:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/16 16:33:41 by hladeiro         ###   ########.fr       */
+/*   Created: 2024/04/18 19:17:22 by hladeiro          #+#    #+#             */
+/*   Updated: 2024/04/18 19:17:26 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	count_words(const char *s, char c)
 
 	i = 1;
 	result = 0;
-	if (!s)
+	if (!*s)
 		return (0);
 	while (s[i])
 	{
