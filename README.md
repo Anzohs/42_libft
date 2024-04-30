@@ -6,4 +6,4 @@
 ## Files
 
 ### Makefile
-- [Makefile]([https://github.com/Anzohs/42_libft/blob/main/Makefile])
+- [Makefile](https://github.com/Anzohs/42_libft/blob/main/Makefile)
