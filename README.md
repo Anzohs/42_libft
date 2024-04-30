@@ -39,3 +39,13 @@ int  main(void)
 }
 ```
 </details>
+
+-How to run the main with the lib
+<details>
+  <summary>How to Compile the main with the library</summary>
+  
+```bash
+cc main.c libft.a
+```
+
+</details>
