@@ -12,6 +12,7 @@
 -Compile the library
 <details>
   <summary>How to Compile</summary>
+  
 ```bash
 #compile 
 make
@@ -20,4 +21,5 @@ make clean
 #clean all the files and the library
 make fclean
 ```
+
 </details>
