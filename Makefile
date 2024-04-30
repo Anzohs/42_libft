@@ -6,7 +6,7 @@
 #    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 19:11:05 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/18 19:24:17 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/23 17:58:31 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
-bonus:			$(BONUS) $(BONUS_OBJ) 
+bonus:			$(BONUS_OBJ) 
 				ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
@@ -47,7 +47,6 @@ clean:
 fclean:			clean
 				$(RM) $(BONUS_OBJ)
 
-re:				fclean 
-				$(NAME) 
+re:				fclean $(NAME) 
 
 .PHONY:			all clean fclean re bonus

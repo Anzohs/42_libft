@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 19:17:22 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/18 19:17:26 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:57:24 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,17 @@ static int	find_del(char *s, char c)
 	return (0);
 }
 
+static char	**ft_free_malloc(char **ptr, int d)
+{
+	int	i;
+
+	i = 0;
+	while (i < d)
+		free(ptr[i++]);
+	free(ptr);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -62,15 +73,16 @@ char	**ft_split(char const *s, char c)
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	d = 0;
-	while (d < words)
+	d = -1;
+	while (++d < words)
 	{
 		while (s[i] == c)
 			i++;
 		pos = find_del((char *)s + i, c);
 		ptr[d] = ft_substr(s, (unsigned int) i, (size_t)pos);
+		if (!ptr[d])
+			return (ft_free_malloc(ptr, d));
 		i += pos + 1;
-		d++;
 	}
 	return (ptr);
 }
