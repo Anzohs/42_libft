@@ -23,3 +23,19 @@ make fclean
 ```
 
 </details>
+
+-How to include the lib in C
+<details>
+  <summary>Include the lib in C file</summary>
+  
+```C
+//We include the header file
+#include 'libft.h' 
+
+//example with split
+int  main(void)
+{
+  char **p = ft_split("Hello World", ' ');
+}
+```
+</details>
