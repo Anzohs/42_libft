@@ -7,3 +7,14 @@
 
 ### Makefile
 - [Makefile](https://github.com/Anzohs/42_libft/blob/main/Makefile)
+
+
+-Compile the library
+```bash
+#compile 
+make
+#clean the .o files
+make clean
+#clean all the files and the library
+make fclean
+```
